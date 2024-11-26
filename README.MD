@@ -24,7 +24,7 @@ The app focuses on delivering features like personalized recommendations, dynami
 
 Below is the folder structure following a **hexagonal architecture**:
 ```bash
-my-ecommerce-app/
+data-driven-ecommerce-app/
 ├── adapters/               # Interface adapters connecting the domain with external systems
 │   ├── in/                 # Adapters for incoming interactions (e.g., controllers, routes)
 │   │   ├── controllers/    # Handle HTTP requests and responses
@@ -74,36 +74,29 @@ my-ecommerce-app/
 
 ## Installation
 
-
 1. **Clone the repository**:
 
 ```bash
-
-`git clone https://github.com/your-username/data-driven-ecommerce-app.git`
-
+git clone https://github.com/your-username/data-driven-ecommerce-app.git
 ```
 
 2. **Navigate to the project directory**:
 
 ```bash
-
-`cd data-driven-ecommerce-app`
-
+cd data-driven-ecommerce-app
 ```
 
 3. **Install dependencies**:
 
 ```bash
-
-`npm install`
-
+npm install
 ```
+
 4. **Environment Variables**
 
 In Next.js, environment variables are managed to control their exposure to either the server or the client, ensuring security and functionality.
 
 ***Server-Side Environment Variable***
-
 
 By default, environment variables in Next.js are accessible only on the server side. These variables are ideal for sensitive information such as API keys, database credentials, and other secrets that should not be exposed to the client. They can be utilized in server-side functions like getServerSideProps, getStaticProps, and API routes. For example, to access a server-side environment variable:
 
@@ -114,13 +107,11 @@ export async function getServerSideProps() {
 
 	// Use apiKey securely on the server
 }
-
-*Client-Side Environment Variables:*
-
 ```
 
-If an environment variable needs to be accessible on the client side, it must be prefixed with NEXT_PUBLIC_. This prefix indicates to Next.js that the variable can be exposed to the browser. For instance:
+***Client-Side Environment Variables:***
 
+If an environment variable needs to be accessible on the client side, it must be prefixed with NEXT_PUBLIC_. This prefix indicates to Next.js that the variable can be exposed to the browser. For instance:
 
 ***.env***
 
@@ -154,9 +145,8 @@ By adhering to these practices, you can maintain a secure and efficient configur
 6. Start the development server:
 
 ```bash
-`npm run dev`
+npm run dev
 ```
-
 ----------
 
 ## Git-Flow Workflow
@@ -175,28 +165,24 @@ This project uses Git-flow for branching:
 
 1. Create a feature branch:
 ```bash
-
-`git flow feature start <feature-name>`
-
+git flow feature start <feature-name>
 ```
+
 2. Commit changes:
-
 ```bash
-
-`git commit -m "feat: <feature description>"`
-
+git commit -m "feat: <feature description>"
 ```
 3. Push changes:
-
 ```bash
 git  push  origin  feature/<feature-name>
 ```
-4. Open a pull request for review.
-6.  Start the development server:
 
+4.  Start the development server:
 ```bash
-`npm run dev` 
+npm run dev 
 ```
+5. Open a pull request for review.
+
 ---
 ## Features and Business Goals
 
@@ -353,6 +339,41 @@ git  push  origin  feature/<feature-name>
     - React
     - Next.js
     - Firebase or MongoDB
+    
+- [ ] **Social Sharing**: Allow users to share products and content on social media platforms.
+  - **Business Goal**: Increase traffic and brand awareness through user-generated promotion.
+  - **Implementation**:
+    - Add social media sharing buttons on product detail pages.
+    - Enable sharing of wishlist items directly to social platforms or via email.
+    - Integrate Open Graph and Twitter Card metadata for better link previews.
+  - **Technologies**:
+    - React Share for social sharing buttons.
+    - Open Graph meta tags for optimizing shared content appearance.
+    - Nodemailer for email-based sharing.
+
+- [ ] **Enhanced SEO**: Implement advanced SEO techniques to improve search engine rankings and visibility.
+  - **Business Goal**: Drive organic traffic and improve search engine discoverability.
+  - **Implementation**:
+    - Add structured data (JSON-LD) for rich snippets on search engine results.
+    - Optimize product pages with descriptive meta tags, keywords, and alt attributes for images.
+    - Implement breadcrumbs for better site navigation and SEO.
+    - Leverage Next.js's built-in support for `next/head` to manage page metadata.
+  - **Technologies**:
+    - Next.js Head component.
+    - Schema.org structured data (JSON-LD).
+    - Lighthouse or Web.dev for SEO audits.
+
+- [ ] **Social Proof with User-Generated Content (UGC)**: Encourage customers to share their product experiences on social platforms or directly on the site.
+  - **Business Goal**: Build trust and increase conversions through authentic user-generated content.
+  - **Implementation**:
+    - Allow users to upload photos or videos of purchased products.
+    - Display customer testimonials on the homepage and product pages.
+    - Use a moderation system to review and approve user-generated content.
+  - **Technologies**:
+    - Cloudinary for media uploads.
+    - React for user-upload interfaces.
+    - Firebase for content moderation and storage.
+
 ----
 # Licence
 
